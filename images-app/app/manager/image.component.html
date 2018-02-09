@@ -1,0 +1,9 @@
+<img [src]="imageURL" style="height: 200px;"/>
+<blockquote><strong>Image Source: </strong>{{imageURL}}</blockquote>
+<form>
+    <fieldset>
+        <legend>Enter your image url</legend>
+        <input type="text" name="imageAux" [(ngModel)]="imageAux" required />
+        <button (click)="save()">Save</button>
+    </fieldset>
+</form>

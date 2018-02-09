@@ -1,0 +1,22 @@
+<style tyle="text/css">
+    .highlight{
+        background-color: yellow;
+    }
+
+    .strike{
+        text-decoration: line-through;
+    }
+
+</style>
+
+    <label for="showPanelCheck">Show Panel?</label>
+    <input id="showPanelCheck" type="checkbox" [(ngModel)]="showPanel" name="showPanel" />
+    <p *ngIf="showPanel">
+        Panel is show
+    </p>
+    <p [ngClass]="getClasses()">
+        Custom classes
+    </p>
+    <p [ngStyle]="getStyles()">
+        Custom styles
+    </p>
