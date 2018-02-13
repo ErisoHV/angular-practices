@@ -1,0 +1,37 @@
+<style type="text/css">
+    table thead {
+        background-color: lightgray;
+        font-weight: bold;
+    }
+    img.logo {
+        height: 75px;
+    }
+    img.logo.hidden {
+        display: none;
+    }
+</style>
+<table>
+    <thead>
+        <tr>
+            <th>
+                Image
+            </th>
+            <th>
+                Show/Hide
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let logo of logos">
+            <td>
+                <img class="logo" [src]="logo.imageUrl" [class.hidden]="!logo.visible" alt="{{logo.description}}"/>
+            </td>
+            <td>
+                <button (click)="logo.visible = !logo.visible">
+                    <span *ngIf="logo.visible">Hide {{logo.description}}</span>
+                    <span *ngIf="!logo.visible">Show {{logo.description}}</span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
